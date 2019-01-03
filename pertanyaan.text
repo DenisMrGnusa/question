@@ -1,0 +1,65 @@
+var msg = {
+    from: '...',
+    subject: '...',
+    html: '<div itemscope itemtype="http://schema.org/Event">
+            <meta itemprop="name" content="Taco Night" />
+            <meta itemprop="startDate" content="2027-04-18T15:30:00Z" />
+            <meta itemprop="endDate" content="2027-04-18T16:30:00Z" />
+            <div itemprop="location" itemscope itemtype="http://schema.org/Place">
+                <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <meta itemprop="name" content="Google" />
+                    <meta itemprop="streetAddress" content="24 Willie Mays Plaza" />
+                    <meta itemprop="addressLocality" content="San Francisco" />
+                    <meta itemprop="addressRegion" content="CA" />
+                    <meta itemprop="postalCode" content="94107" />
+                    <meta itemprop="addressCountry" content="USA" />
+                </div>
+            </div>
+            <div itemprop="potentialAction" itemscope itemtype="http://schema.org/RsvpAction">
+                <div itemprop="handler" itemscope itemtype="http://schema.org/HttpActionHandler">
+                    <link itemprop="url" href="http://mysite.com/rsvp?eventId=123&value=yes" />
+                </div>
+                <link itemprop="attendance" href="http://schema.org/RsvpAttendance/Yes" />
+                <meta itemprop="rsvpResponse" content="yes">
+            </div>
+            <div itemprop="potentialAction" itemscope itemtype="http://schema.org/RsvpAction">
+                <div itemprop="handler" itemscope itemtype="http://schema.org/HttpActionHandler">
+                    <link itemprop="url" href="http://mysite.com/rsvp?eventId=123&value=no" />
+                </div>
+                <link itemprop="attendance" href="http://schema.org/RsvpAttendance/No" />
+                <meta itemprop="rsvpResponse" content="no">
+            </div>
+            <div itemprop="potentialAction" itemscope itemtype="http://schema.org/RsvpAction">
+                <div itemprop="handler" itemscope itemtype="http://schema.org/HttpActionHandler">
+                    <link itemprop="url" href="http://mysite.com/rsvp?eventId=123&value=maybe" />
+                </div>
+                <link itemprop="attendance" href="http://schema.org/RsvpAttendance/Maybe" />
+                <meta itemprop="rsvpResponse" content="maybe">
+            </div>
+        </div>
+        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        <html xmlns="http://www.w3.org/1999/xhtml">
+
+            <head>
+                <meta name="viewport" content="width=device-width" />
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                <title>Basic</title>
+            </head>
+
+            <body bgcolor="#FFFFFF">
+                    .....
+            </body>
+
+        </html>'
+}
+
+msg.to = '"'+result.undangan[i].user_name+'" <'+result.undangan[i].user_email+'>';
+    smtpTransport.sendMail(msg, function (err) {
+    if (err) {
+    console.log(err+' error');
+    return;
+    } else {
+    console.log('berhasil');
+    }
+    smtpTransport.close();
+});
